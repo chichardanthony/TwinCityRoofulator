@@ -146,3 +146,117 @@ const results = calculate();
             Twin City Roofing Estimate Calculator
           </h1>
         </div>
+{/* Customer Information Section */}
+        <div className="p-6">
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-gray-900">
+              Customer Information
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="customerName"
+                  value={inputs.customerName}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Full Name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  name="customerPhone"
+                  value={inputs.customerPhone}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="(555) 555-5555"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="customerEmail"
+                  value={inputs.customerEmail}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="email@example.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Street Address
+                </label>
+                <input
+                  type="text"
+                  name="customerAddress"
+                  value={inputs.customerAddress}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Street Address"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  City
+                </label>
+                <input
+                  type="text"
+                  name="customerCity"
+                  value={inputs.customerCity}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="City"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    State
+                  </label>
+                  <input
+                    type="text"
+                    name="customerState"
+                    value={inputs.customerState}
+                    onChange={handleInputChange}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                             focus:border-blue-500 focus:ring-blue-500"
+                    placeholder="State"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    ZIP
+                  </label>
+                  <input
+                    type="text"
+                    name="customerZip"
+                    value={inputs.customerZip}
+                    onChange={handleInputChange}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                             focus:border-blue-500 focus:ring-blue-500"
+                    placeholder="ZIP"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
