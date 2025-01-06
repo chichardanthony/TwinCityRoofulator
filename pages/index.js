@@ -112,3 +112,37 @@ const RoofingCalculator = () => {
     simpleHip: 1.13,
     complexHip: 1.18
   };
+const results = calculate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputs(prev => ({
+      ...prev,
+      [name]: value === '' ? (name.includes('customer') ? '' : 0) : 
+              name.includes('customer') ? value : Number(value)
+    }));
+  };
+
+  const handleRoofTypeChange = (value) => {
+    setInputs(prev => ({
+      ...prev,
+      roofType: value
+    }));
+  };
+
+  const handleGeringToggle = () => {
+    setInputs(prev => ({
+      ...prev,
+      isGeringNE: !prev.isGeringNE
+    }));
+  };
+
+  // Start of UI render
+  return (
+    <div className="p-4">
+      <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg">
+        <div className="px-6 py-4 border-b border-gray-200">
+          <h1 className="text-2xl font-bold text-gray-900">
+            Twin City Roofing Estimate Calculator
+          </h1>
+        </div>
