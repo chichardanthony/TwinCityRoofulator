@@ -260,3 +260,99 @@ const results = calculate();
               </div>
             </div>
           </div>
+ <div className="mt-8 p-6 border-t border-gray-200">
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-gray-900">
+              Roof Configuration
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Roof Type
+                </label>
+                <select
+                  value={inputs.roofType}
+                  onChange={(e) => handleRoofTypeChange(e.target.value)}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                >
+                  <option value="gable">Gable (1.10)</option>
+                  <option value="simpleHip">Simple Hip (1.13)</option>
+                  <option value="complexHip">Complex Hip (1.18)</option>
+                </select>
+              </div>
+
+              <div className="flex items-center mt-6">
+                <input
+                  type="checkbox"
+                  id="gering"
+                  checked={inputs.isGeringNE}
+                  onChange={handleGeringToggle}
+                  className="h-4 w-4 text-blue-600 rounded border-gray-300"
+                />
+                <label htmlFor="gering" className="ml-2 block text-sm text-gray-900">
+                  Property in Gering, NE
+                </label>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Base Squares
+                </label>
+                <input
+                  type="number"
+                  name="baseSquares"
+                  value={inputs.baseSquares || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Number of Layers
+                </label>
+                <input
+                  type="number"
+                  name="layers"
+                  value={inputs.layers}
+                  onChange={handleInputChange}
+                  min="1"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Two Story Squares
+                </label>
+                <input
+                  type="number"
+                  name="twoStorySquares"
+                  value={inputs.twoStorySquares || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Steep Squares
+                </label>
+                <input
+                  type="number"
+                  name="steepSquares"
+                  value={inputs.steepSquares || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+          </div>
