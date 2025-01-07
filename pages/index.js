@@ -356,3 +356,58 @@ const results = calculate();
               </div>
             </div>
           </div>
+<div className="mt-8 p-6 border-t border-gray-200">
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-gray-900">
+              Additional Components
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {inputs.isGeringNE && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Ice & Water Shield Length (LF)
+                  </label>
+                  <input
+                    type="number"
+                    name="iceAndWaterLength"
+                    value={inputs.iceAndWaterLength || ''}
+                    onChange={handleInputChange}
+                    min="0"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                             focus:border-blue-500 focus:ring-blue-500"
+                  />
+                </div>
+              )}
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Ridge Vent Length (LF)
+                </label>
+                <input
+                  type="number"
+                  name="ridgeVentLength"
+                  value={inputs.ridgeVentLength || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Hinge Extensions
+                </label>
+                <input
+                  type="number"
+                  name="hingeExtensions"
+                  value={inputs.hingeExtensions || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
