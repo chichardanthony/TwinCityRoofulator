@@ -411,3 +411,73 @@ const results = calculate();
             </div>
           </div>
         </div>
+ <div className="mt-8 p-6 border-t border-gray-200">
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-gray-900">
+              Gutters and Downspouts
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  5" Gutter Length (LF)
+                </label>
+                <input
+                  type="number"
+                  name="gutter5Length"
+                  value={inputs.gutter5Length || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  6" Gutter Length (LF)
+                </label>
+                <input
+                  type="number"
+                  name="gutter6Length"
+                  value={inputs.gutter6Length || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  2x3" Downspout Length (LF)
+                </label>
+                <input
+                  type="number"
+                  name="downspout2x3Length"
+                  value={inputs.downspout2x3Length || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+                <span className="mt-1 text-sm text-gray-500">Rounds to nearest 10 LF</span>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  3x4" Downspout Length (LF)
+                </label>
+                <input
+                  type="number"
+                  name="downspout3x4Length"
+                  value={inputs.downspout3x4Length || ''}
+                  onChange={handleInputChange}
+                  min="0"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
+                           focus:border-blue-500 focus:ring-blue-500"
+                />
+                <span className="mt-1 text-sm text-gray-500">Rounds to nearest 10 LF</span>
+              </div>
+            </div>
+          </div>
+        </div>
