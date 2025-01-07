@@ -55,7 +55,69 @@ const RoofingCalculator = () => {
     simpleHip: 1.13,
     complexHip: 1.18
   };
-import React, { useState } from 'react';
+  const calculate = () => {
+    const wasteFactor = wasteFactors[inputs.roofType];
+    const baseTearOff = inputs.baseSquares * prices.tearOff;
+    const extraLayerCost = inputs.layers > 1 ? inputs.baseSquares * prices.extraLayer : 0;
+    
+    const baseWithWaste = Math.ceil(inputs.baseSquares * wasteFactor);
+    const heritageApplication = baseWithWaste * prices.heritage;
+    const legacyApplication = baseWithWaste * prices.legacy;
+
+    const twoStoryTearOff = inputs.twoStorySquares * prices.twoStoryTearOff;
+    const twoStoryWithWaste = Math.ceil(inputs.twoStorySquares * wasteFactor);
+    const twoStoryOn = twoStoryWithWaste * prices.twoStoryOn;
+
+    const steepTearOff = inputs.steepSquares * prices.steepTearOff;
+    const steepWithWaste = Math.ceil(inputs.steepSquares * wasteFactor);
+    const steepOn = steepWithWaste * prices.steepOn;
+
+    const iceAndWater = inputs.isGeringNE ? inputs.iceAndWaterLength * prices.iceAndWater : 0;
+    const ridgeVent = inputs.ridgeVentLength * prices.ridgeVent;
+
+    const gutters5 = inputs.gutter5Length * prices.gutters5;
+    const gutters6 = inputs.gutter6Length * prices.gutters6;
+    const downspouts2x3 = Math.ceil(inputs.downspout2x3Length / 10) * 10 * prices.downspouts2x3;
+    const downspouts3x4 = Math.ceil(inputs.downspout3x4Length / 10) * 10 * prices.downspouts3x4;
+    const hingeExtensionsCost = inputs.hingeExtensions * prices.hingeExtension;
+
+    const guttersTotal = gutters5 + gutters6 + downspouts2x3 + downspouts3x4 + hingeExtensionsCost;
+    const heritageTotalNoGutters = baseTearOff + extraLayerCost + heritageApplication + 
+                                  twoStoryTearOff + twoStoryOn + steepTearOff + steepOn + 
+                                  iceAndWater + ridgeVent;
+    const legacyTotalNoGutters = baseTearOff + extraLayerCost + legacyApplication + 
+                                twoStoryTearOff + twoStoryOn + steepTearOff + steepOn + 
+                                iceAndWater + ridgeVent;
+
+    return {
+      baseCalc: { tearOff: baseTearOff, extraLayer: extraLayerCost },
+      heritage: {
+        application: heritageApplication,
+        twoStory: { tearOff: twoStoryTearOff, on: twoStoryOn },
+        steep: { tearOff: steepTearOff, on: steepOn },
+        iceAndWater,
+        ridgeVent,
+        totalNoGutters: heritageTotalNoGutters
+      },
+      legacy: {
+        application: legacyApplication,
+        twoStory: { tearOff: twoStoryTearOff, on: twoStoryOn },
+        steep: { tearOff: steepTearOff, on: steepOn },
+        iceAndWater,
+        ridgeVent,
+        totalNoGutters: legacyTotalNoGutters
+      },
+      guttersAndDownspouts: {
+        gutters5,
+        gutters6,
+        downspouts2x3,
+        downspouts3x4,
+        hingeExtensions: hingeExtensionsCost,
+        total: guttersTotal
+      },
+      wasteFactor
+    };
+  };import React, { useState } from 'react';
 
 const RoofingCalculator = () => {
   const [inputs, setInputs] = useState({
