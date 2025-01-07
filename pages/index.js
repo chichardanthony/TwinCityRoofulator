@@ -1,6 +1,27 @@
 import React, { useState } from 'react';
+const results = calculate();
 
-const RoofingCalculator = () => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputs(prev => ({
+      ...prev,
+      [name]: value === '' ? (name.includes('customer') ? '' : 0) : 
+              name.includes('customer') ? value : Number(value)
+    }));
+  };
+
+  const handleRoofTypeChange = (value) => {
+    setInputs(prev => ({ ...prev, roofType: value }));
+  };
+
+  const handleGeringToggle = () => {
+    setInputs(prev => ({ ...prev, isGeringNE: !prev.isGeringNE }));
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">const RoofingCalculator = () => {
   const [inputs, setInputs] = useState({
     // Customer Information
     customerName: '',
