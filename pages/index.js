@@ -481,3 +481,124 @@ const results = calculate();
             </div>
           </div>
         </div>
+{/* Results Display Section */}
+        <div className="mt-8 p-6 border-t border-gray-200">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Estimate Summary
+          </h2>
+
+          {/* Heritage Class 3 Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-white rounded-lg shadow overflow-hidden">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg font-medium text-gray-900">Heritage Class 3</h3>
+                <dl className="mt-4 space-y-3">
+                  <div className="flex justify-between">
+                    <dt className="text-sm text-gray-600">Base Tear Off</dt>
+                    <dd className="text-sm text-gray-900">${results.baseCalc.tearOff.toFixed(2)}</dd>
+                  </div>
+                  {results.baseCalc.extraLayer > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sm text-gray-600">Extra Layer Tear Off</dt>
+                      <dd className="text-sm text-gray-900">${results.baseCalc.extraLayer.toFixed(2)}</dd>
+                    </div>
+                  )}
+                  <div className="flex justify-between">
+                    <dt className="text-sm text-gray-600">Base Application</dt>
+                    <dd className="text-sm text-gray-900">${results.heritage.application.toFixed(2)}</dd>
+                  </div>
+                  <div className="pt-3 mt-3 border-t border-gray-200">
+                    <div className="flex justify-between font-medium">
+                      <dt className="text-sm text-gray-900">Total (without Gutters)</dt>
+                      <dd className="text-sm text-gray-900">${results.heritage.totalNoGutters.toFixed(2)}</dd>
+                    </div>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            {/* Legacy Class IV Card */}
+            <div className="bg-white rounded-lg shadow overflow-hidden">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg font-medium text-gray-900">Legacy Class IV</h3>
+                <dl className="mt-4 space-y-3">
+                  <div className="flex justify-between">
+                    <dt className="text-sm text-gray-600">Base Tear Off</dt>
+                    <dd className="text-sm text-gray-900">${results.baseCalc.tearOff.toFixed(2)}</dd>
+                  </div>
+                  {results.baseCalc.extraLayer > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sm text-gray-600">Extra Layer Tear Off</dt>
+                      <dd className="text-sm text-gray-900">${results.baseCalc.extraLayer.toFixed(2)}</dd>
+                    </div>
+                  )}
+                  <div className="flex justify-between">
+                    <dt className="text-sm text-gray-600">Base Application</dt>
+                    <dd className="text-sm text-gray-900">${results.legacy.application.toFixed(2)}</dd>
+                  </div>
+                  <div className="pt-3 mt-3 border-t border-gray-200">
+                    <div className="flex justify-between font-medium">
+                      <dt className="text-sm text-gray-900">Total (without Gutters)</dt>
+                      <dd className="text-sm text-gray-900">${results.legacy.totalNoGutters.toFixed(2)}</dd>
+                    </div>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            {/* Gutters Summary Card */}
+            <div className="lg:col-span-2 bg-white rounded-lg shadow overflow-hidden">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg font-medium text-gray-900">Gutters & Downspouts</h3>
+                <dl className="mt-4 space-y-3">
+                  {results.guttersAndDownspouts.gutters5 > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sm text-gray-600">5" Gutters</dt>
+                      <dd className="text-sm text-gray-900">
+                        ${results.guttersAndDownspouts.gutters5.toFixed(2)}
+                      </dd>
+                    </div>
+                  )}
+                  {results.guttersAndDownspouts.gutters6 > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sm text-gray-600">6" Gutters</dt>
+                      <dd className="text-sm text-gray-900">
+                        ${results.guttersAndDownspouts.gutters6.toFixed(2)}
+                      </dd>
+                    </div>
+                  )}
+                  {results.guttersAndDownspouts.downspouts2x3 > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sm text-gray-600">2x3" Downspouts</dt>
+                      <dd className="text-sm text-gray-900">
+                        ${results.guttersAndDownspouts.downspouts2x3.toFixed(2)}
+                      </dd>
+                    </div>
+                  )}
+                  {results.guttersAndDownspouts.downspouts3x4 > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sm text-gray-600">3x4" Downspouts</dt>
+                      <dd className="text-sm text-gray-900">
+                        ${results.guttersAndDownspouts.downspouts3x4.toFixed(2)}
+                      </dd>
+                    </div>
+                  )}
+                  <div className="pt-3 mt-3 border-t border-gray-200">
+                    <div className="flex justify-between font-medium">
+                      <dt className="text-sm text-gray-900">Total</dt>
+                      <dd className="text-sm text-gray-900">
+                        ${results.guttersAndDownspouts.total.toFixed(2)}
+                      </dd>
+                    </div>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+    </div>
+  );
+};
+
+export default RoofingCalculator;
