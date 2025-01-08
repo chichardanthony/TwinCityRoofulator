@@ -1,4 +1,5 @@
 import React from 'react';
+import './theme.css'; // Import the theme CSS
 
 const Button = ({ children, onClick }) => (
   <button 
