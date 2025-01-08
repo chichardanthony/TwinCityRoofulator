@@ -450,7 +450,7 @@ const RoofingCalculator = () => {
                    <div className="flex justify-between">
                      <dt className="text-sm text-gray-600">Base Application</dt>
                      <dd className="text-sm text-gray-900">${results.herit
-<div className="flex justify-between">
+                   <div className="flex justify-between">
                      <dt className="text-sm text-gray-600">Base Application</dt>
                      <dd className="text-sm text-gray-900">${results.heritage.application.toFixed(2)}</dd>
                    </div>
@@ -574,7 +574,5 @@ const RoofingCalculator = () => {
    </div>
  );
 };
-
-export default RoofingCalculator;
 
 export default RoofingCalculator;
