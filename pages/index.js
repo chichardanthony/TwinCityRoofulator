@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../theme.css'; // Import the theme CSS
 
 const RoofingCalculator = () => {
  const [inputs, setInputs] = useState({
